@@ -26,8 +26,8 @@ function Projects() {
     <div>
       <div>
         <div className="mt-16 container mx-auto flex flex-col space-y-5">
-          <h3 className="mx-auto text-2xl font-bold">Our Services </h3>
-          <h1 className="mx-auto text-4xl ">Our Construction Services</h1>
+          <h3 className="mx-auto text-2xl font-bold">Our Projects </h3>
+          <h1 className="mx-auto text-4xl ">Our Construction Projects</h1>
           <p className="mx-auto text-xl">
             We offer a diverse array of construction services, spanning
             residential, commercial, and industrial projects.
