@@ -10,7 +10,9 @@ function ProjectDetail() {
 
   useEffect(() => {
     const fetchService = async () => {
-      const response = await fetch(`http://localhost:4000/api/project/${id}`);
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/project/${id}`
+      );
       const json = await response.json();
 
       if (response.ok) {

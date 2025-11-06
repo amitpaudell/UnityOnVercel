@@ -7,7 +7,9 @@ function Projects() {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchServices = async () => {
-      const response = await fetch('http://localhost:4000/api/project');
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/project`
+      );
       const json = await response.json();
 
       if (response.ok) {

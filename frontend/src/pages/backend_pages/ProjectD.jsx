@@ -8,7 +8,9 @@ function ProjectD() {
 
   useEffect(() => {
     const fetchServices = async () => {
-      const response = await fetch('http://localhost:4000/api/project');
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/project`
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -89,7 +91,9 @@ function ProjectD() {
 
     if (isEditMode && editingProjectId) {
       const response = await fetch(
-        `http://localhost:4000/api/project/${editingProjectId}`,
+        `${
+          import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+        }/api/project/${editingProjectId}`,
         {
           method: 'PUT',
           body: JSON.stringify(services),
@@ -125,13 +129,16 @@ function ProjectD() {
         });
       }
     } else {
-      const response = await fetch('http://localhost:4000/api/project', {
-        method: 'POST',
-        body: JSON.stringify(services),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/project`,
+        {
+          method: 'POST',
+          body: JSON.stringify(services),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       const json = await response.json();
       if (!response.ok) {
         setError(json.error);
@@ -178,9 +185,12 @@ function ProjectD() {
   };
 
   const handleDelete = async (id) => {
-    const respose = await fetch(`http://localhost:4000/api/project/${id}`, {
-      method: 'DELETE',
-    });
+    const respose = await fetch(
+      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/project/${id}`,
+      {
+        method: 'DELETE',
+      }
+    );
 
     const json = await respose.json();
     if (respose.ok) {

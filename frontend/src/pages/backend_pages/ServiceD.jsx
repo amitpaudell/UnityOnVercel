@@ -8,7 +8,9 @@ function ServiceD() {
 
   useEffect(() => {
     const fetchServices = async () => {
-      const response = await fetch('http://localhost:4000/api/construct');
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/construct`
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -78,7 +80,9 @@ function ServiceD() {
 
     if (isEditMode && editingProjectId) {
       const response = await fetch(
-        `http://localhost:4000/api/construct/${editingProjectId}`,
+        `${
+          import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+        }/api/construct/${editingProjectId}`,
         {
           method: 'PUT',
           body: JSON.stringify(services),
@@ -111,13 +115,16 @@ function ServiceD() {
         });
       }
     } else {
-      const response = await fetch('http://localhost:4000/api/construct', {
-        method: 'POST',
-        body: JSON.stringify(services),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/construct`,
+        {
+          method: 'POST',
+          body: JSON.stringify(services),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       const json = await response.json();
       if (!response.ok) {
         setError(json.error);
@@ -158,9 +165,12 @@ function ServiceD() {
   };
 
   const handleDelete = async (id) => {
-    const respose = await fetch(`http://localhost:4000/api/construct/${id}`, {
-      method: 'DELETE',
-    });
+    const respose = await fetch(
+      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/construct/${id}`,
+      {
+        method: 'DELETE',
+      }
+    );
 
     const json = await respose.json();
     if (respose.ok) {
