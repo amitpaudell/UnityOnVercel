@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Services() {
   const [services, setServices] = useState(null);
+  const [loadingStatus, setLoadingStatus] = useState(true);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchServices = async () => {
@@ -14,6 +15,7 @@ function Services() {
 
       if (response.ok) {
         setServices(json);
+        setLoadingStatus(null);
       }
     };
     fetchServices();
@@ -33,8 +35,10 @@ function Services() {
             commercial, and industrial developments.
           </p>
         </div>
-
-        <div className="grid grid-cols-3  gap-8">
+        {loadingStatus && (
+          <h1 className="mt-40 text-4xl text-center">Loading....</h1>
+        )}
+        <div className="flex flex-col flex-wrap   md:grid md:grid-cols-3 md:gap-8">
           {services &&
             services.map((service) => (
               <div>

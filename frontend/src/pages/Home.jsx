@@ -13,7 +13,7 @@ import Effort from '../images/icon-employee-ownership.svg';
 function Home() {
   return (
     <div>
-      <div className="ml-18 mt-18 mr-12 flex flex-col-reverse md:flex-row min-h-[calc(100vh-4rem)]  ">
+      <div className="ml-8 md:ml-18 mt-18 mr-12 flex flex-col-reverse md:flex-row min-h-[calc(100vh-4rem)]  ">
         {/* Left Content */}
         <div className="md:w-1/2">
           <div className="flex flex-col">
@@ -41,7 +41,7 @@ function Home() {
       </div>
 
       {/* About Us */}
-      <div className="ml-18 flex flex-col space-y-20">
+      <div className="mt-10 ml-6 md:ml-18 flex flex-col space-y-20">
         <div>
           <h1 className="text-4xl font-bold max-w-md text-center md:text-left md:text-5xl">
             We know every decision has an impact
@@ -120,9 +120,9 @@ function Home() {
       </div>
 
       {/* Video Section */}
-      <div className="ml-18 mt-24 mr-12">
+      <div className=" ml-8 md:ml-18 mt-24 mr-12">
         {/* Text Section */}
-        <div className="flex flex-col space-y-12 items-center md:items-start md:flex-row  ">
+        <div className="mb-8 flex flex-col space-y-12 items-center md:items-start md:flex-row  ">
           {/* Left */}
           <div className="w-full md:max-w-[40%]">
             <h1 className="text-4xl font-bold max-w-md text-center md:text-left md:text-5xl">
@@ -162,7 +162,7 @@ function Home() {
         <div className="flex flex-col space-y-12 items-center md:items-start md:flex-row  ">
           {/* Left */}
           <div className="w-full md:max-w-[50%]">
-            <h1 className="text-4xl font-bold max-w-[80%] text-center md:text-left md:text-5xl">
+            <h1 className="text-4xl font-bold  text-center md:text-left md:text-5xl">
               Helping you transform communities across the globe.
             </h1>
           </div>
@@ -183,14 +183,14 @@ function Home() {
         {/* Map with Text section */}
         <div className="mt-20 flex flex-col md:flex-row md:items-start md:space-x-56 ">
           {/* Map */}
-          <div className="w-[60%] ">
+          <div className="w-[100%] md:w-[60%] mb-20 md:mb-0">
             <img src={Map} alt="" />
           </div>
 
           {/* Changing Text */}
           <div>
             <div className="p-2 mb-8">
-              <h3 className="text-7xl  text-[#fec525] font-bold">
+              <h3 className="text-5xl md:text-7xl  text-[#fec525] font-bold">
                 <CountUp end={100} duration={5} />%
               </h3>
               <p className="ml-6 text-white font-extralight text-xl">
@@ -199,7 +199,7 @@ function Home() {
             </div>
 
             <div className="p-2">
-              <h3 className="text-7xl  text-[#fec525] font-bold">
+              <h3 className="text-5xl md:text-7xl  text-[#fec525] font-bold">
                 <CountUp end={1000} duration={3} />+
               </h3>
               <p className="ml-6 text-white font-extralight text-xl">
