@@ -27,36 +27,42 @@ function ProjectDetail() {
       {service && (
         <div className="">
           {/* Upper */}
-          <div className="mt-12 w-full h-32  ">
+          <div className="hidden md:block mt-12 w-full h-32  ">
             <h1 className="text-left md:text-center text-6xl font-bold">
               {service.title}
             </h1>
           </div>
 
           {/* Lower */}
-          <div className="m-16 flex flex-col space-y-24 justify-center items-center md:items-start md:flex-row md:justify-around">
+          <div className="m-6 md:m-16 flex flex-col space-y-24 justify-center items-center md:items-start md:flex-row md:justify-around">
             <div className="w-full md:w-[25%] shadow-2xl rounded-3xl flex flex-col space-y-7 px-6 py-8">
-              <h1 className="font-sans font-bold  text-2xl">Insights</h1>
+              <h1 className="font-sans font-bold  text-xl md:text-2xl">
+                Insights
+              </h1>
 
               <div>
-                <p className="text-[18px] text-slate-700 font-semibold">
+                <p className="text-[14px] md:text-[18px] text-slate-700 font-semibold">
                   Location:{' '}
                 </p>
-                <p className="text-[24px] ">{service.location}</p>
+                <p className="text-[18px] md:text-[24px] ">
+                  {service.location}
+                </p>
               </div>
 
               <div>
-                <p className="text-[18px] text-slate-700 font-semibold">
+                <p className="text-[14px] md:text-[18px] text-slate-700 font-semibold">
                   Construction Type{' '}
                 </p>
-                <p className="text-[24px]">{service.typeConstruct}</p>
+                <p className="text-[18px] md:text-[24px]">
+                  {service.typeConstruct}
+                </p>
               </div>
 
               <div>
-                <p className="text-[18px] text-slate-700 font-semibold">
+                <p className="text-[14px] md:text-[18px] text-slate-700 font-semibold">
                   Sector:
                 </p>
-                <p className="text-[24px]">{service.sector}</p>
+                <p className="text-[18px] md:text-[24px]">{service.sector}</p>
               </div>
             </div>
 
@@ -64,7 +70,9 @@ function ProjectDetail() {
             <div className="flex md:w-[50%] flex-col space-y-8">
               <img src={service.image} alt="" />
               <h3 className="font-bold text-3xl">{service.title}</h3>
-              <h3 className="text-2xl text-justify">{service.description}</h3>
+              <h3 className="text-xl md:text-2xl text-justify">
+                {service.description}
+              </h3>
             </div>
           </div>
         </div>

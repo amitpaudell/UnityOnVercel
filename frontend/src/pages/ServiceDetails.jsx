@@ -25,9 +25,9 @@ function ServiceDetails() {
   return (
     <div>
       {service && (
-        <div className="m-32">
+        <div className="m-8 md:m-32">
           {/* Upper */}
-          <div className="mt-12 w-full h-32 text-6xl font-bold ">
+          <div className="hidden md:block mt-12 w-full h-32 text-2xl md:text-6xl font-bold ">
             <h1 className="text-center">{service.title}</h1>
           </div>
 
@@ -40,7 +40,9 @@ function ServiceDetails() {
             <div className="flex flex-col space-y-8">
               <img src={service.image} alt="" />
               <h3 className="font-bold text-3xl">{service.title}</h3>
-              <h3 className="text-2xl text-justify">{service.description}</h3>
+              <h3 className="text-xl md:text-2xl text-justify">
+                {service.description}
+              </h3>
             </div>
           </div>
         </div>
